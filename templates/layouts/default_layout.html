@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="ie=edge;text/html;charset=UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-grid.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-reboot.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        
+        {% include 'layouts/parts/header.html' %}
+        
+        
+        <section class="flex-column-arround section-site">
+            
+            {% block body %}{% endblock %}
+            
+        </section>
+        
+        
+        {% include 'layouts/parts/footer.html' %}
+
+ 
+    </body>
+</html>

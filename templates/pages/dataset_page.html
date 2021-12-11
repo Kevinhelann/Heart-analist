@@ -1,0 +1,44 @@
+{% extends 'layouts/default_layout.html' %}
+
+
+{% block head %}
+    
+    <title>Administration</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <table>
+        
+        <tr>
+            <th>#</th>
+
+            {% for col in columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+
+        {% for value in data %}
+        
+            <tr>
+                <td>{{ value.id }}</td>
+                <td>{{ value.age }}</td>
+                <td>{{ value.sexe }}</td>
+                <td>{{ value.tdt }}</td>
+                <td>{{ value.par }}</td>
+                <td>{{ value.cholesterol }}</td>
+                <td>{{ value.gaj }}</td>
+                <td>{{ value.ecg }}</td>
+                <td>{{ value.fcmax }}</td>
+                <td>{{ value.angine }}</td>
+                <td>{{ value.depression }}</td>
+                <td>{{ value.pente }}</td>
+                <td>{{ value.coeur }}</td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

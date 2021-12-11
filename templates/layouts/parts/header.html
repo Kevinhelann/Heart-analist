@@ -1,0 +1,11 @@
+<header class="flex-column-arround {{ 'headerHome' if page =='home' }}">
+    <h1>Analyse de coeur</h1>
+    <nav class="flex-row-center">
+        
+        <a class="{{ 'active' if page =='home' }}" href="{{ url_for('home') }}">Accueil</a>
+        <a class="{{ 'active' if page =='register' }}" href="{{ url_for('heart_register') }}">Enregistrement</a>
+        <a class="{{ 'active' if page =='administration' }}" href="{{ url_for('adminSpace') }}">Tableau de bord</a>
+        <a class="{{ 'active' if page =='dataset_page' }}" href="{{ url_for('dataset_page') }}">Dataset</a>
+
+    </nav>
+</header>

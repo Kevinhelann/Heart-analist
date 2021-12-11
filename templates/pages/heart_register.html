@@ -1,0 +1,112 @@
+{% extends 'layouts/default_layout.html' %}
+    
+
+{% block head %}
+    
+    <title>Home</title>
+
+{% endblock %}
+
+
+{% block body %}
+
+
+    {% if error == "badEntryFloat" %}
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Erreur de saisie !</strong> Une valeur numérique a été remplacée par une chaine de caractère.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+    {% endif %}
+
+    <section class="section-index flex-row-arround">
+        
+        <form action="{{ url_for('registerSummary') }}" method="POST" class="flex-column-arround">
+            
+            <h4>Enregistrez et prédisez</h4>            
+            
+            <!-- INPUT AGE -->
+            <input type="number" step="0.01" id="age" required name="age" placeholder="Saisir l'age">
+            
+            
+            <!-- SELECT SEXE -->
+            <select name="sexe" id="sexe" required>
+                <option value="" disabled selected hidden>Sélectionner le sexe</option>
+                {% for key, value in memory_recoder['SEXE'].items() %}
+                <option value="{{ value }}">{{ key }}</option>
+                {% endfor %}
+            </select>
+            
+
+            <!-- SELECT tdt -->
+            <select name="tdt" id="tdt" required>
+                <option value="" disabled selected hidden>Type de douleur thoracique</option>
+                {% for key, value in memory_recoder['TDT'].items() %}
+                <option value="{{ value }}">{{ key }}</option>
+                {% endfor %}
+            </select>
+            
+            
+            <!-- INPUT PAR -->
+            <input type="number" step="0.01" required id="par" name="par" placeholder="Pression artérielle au repos [mm Hg]">
+            
+            
+            <!-- INPUT CHOLESTEROL  -->
+            <input type="number" step="0.01" required id="cholesterol" name="cholesterol" placeholder="Cholestérol sérique [mm/dl]">
+            
+
+            <!-- SELECT GAJ -->
+            <select name="gaj" id="gaj" required>
+                <option value="" disabled selected hidden>Glycémie à jeun (Oui : si glycémie à jeun > 120 mg/dl)</option>
+                <option value="1">Oui</option>
+                <option value="0">Non</option>
+            </select>
+
+
+            <!-- SELECT ECG -->
+            <select name="ecg" id="ecg" required>
+                <option value="" disabled selected hidden>Résultats de l'électrocardiogramme au repos</option>
+                {% for key, value in memory_recoder['ECG'].items() %}
+                    <option value="{{ value }}">{{ key }}</option>
+                {% endfor %}
+           </select>
+
+
+           <!-- INPUT FCMAX -->
+           <input type="number" required step="0.01" id="fcmax" name="fcmax" placeholder="Fréquence cardiaque maximale atteinte">
+           
+
+           <!-- SELECT angine -->
+           <select name="angine" id="angine" required>
+               <option value="" disabled selected hidden>Angine induite par l'exercice</option>
+               {% for key, value in memory_recoder['ANGINE'].items() %}
+               <option value="{{ value }}">{{ key }}</option>
+               {% endfor %}
+            </select>
+            
+
+            <!-- INPUT DEPRESSION -->
+            <input type="number" step="0.01" required id="depression" name="depression" placeholder="Valeur numérique mesurée en dépression">
+            
+
+            <!-- SELECT PENTE -->
+            <select name="pente" id="pente" required>
+                <option value="" disabled selected hidden>La pente du segment ST d'exercice de pointe</option>
+                {% for key, value in memory_recoder['PENTE'].items() %}
+                <option value="{{ value }}">{{ key }}</option>
+                {% endfor %}
+             </select>
+
+
+            <!-- VALIDATION -->
+            <button type="submit" name="Enregistrer">Enregistrer et prédire</button>
+    
+        </form>    
+
+    </section>
+    
+
+{% endblock %}

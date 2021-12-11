@@ -1,0 +1,103 @@
+{% extends 'layouts/default_layout.html' %}
+
+
+{% block head %}
+    
+    <title>Administration</title>
+
+{% endblock %}
+
+{% block body %}
+
+    {% if supression == True and supressionCalled == True %}
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Suppression effectuée</strong> avec succès.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    {% endif %}
+
+
+    {% if supression == False and supressionCalled == True %}
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Echec de la suppression.</strong> Une erreur s'est produite !
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    {% endif %}
+
+
+    
+    <table>
+        
+        <tr>
+            <th>#</th>
+            
+            {% for col in columns %}
+            <th>{{ col }}</th>
+            {% endfor %}
+            
+            <th>ACTION</th>
+        </tr>
+
+        {% for patient in patients %}
+        
+            <tr>
+                <td>{{ patient["id"] }}</td>
+                <td>{{ patient["age"] }}</td>
+                <td>{{ patient["sexe"] }}</td>
+                <td>{{ patient["tdt"] }}</td>
+                <td>{{ patient["par"] }}</td>
+                <td>{{ patient["cholesterol"] }}</td>
+                <td>{{ patient["gaj"] }}</td>
+                <td>{{ patient["ecg"] }}</td>
+                <td>{{ patient["fcmax"] }}</td>
+                <td>{{ patient["angine"] }}</td>
+                <td>{{ patient["depression"] }}</td>
+                <td>{{ patient["pente"] }}</td>
+                <td>{{ patient["coeur"] }}</td>
+                <td class="flex-row-center">
+                    <div data-toggle="modal" data-target="#supressionPatient{{patient.id}}" class="mybtn btn-delete flex-row-center" type="button">
+                        <img src="{{ url_for('static', filename='resources/images/delete.png') }}" alt="">
+                    </div>
+                </td>
+            </tr>
+
+             <!-- Modal -->
+            
+             <div class="modal fade" id="supressionPatient{{patient.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Attention  </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" stye>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            La suppression d'un enregistrement est une action irréversible !
+                            Voulez-vous vraiment supprimer cet enregistrement ?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
+                            <button onclick="location.href='/delete/{{ patient.id }}'" type="button" class="btn btn-danger">Supprimer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        <!-- Modal -->
+
+        {% endfor %}
+
+    </table>
+
+    
+
+{% endblock %}

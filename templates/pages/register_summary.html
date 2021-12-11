@@ -1,0 +1,60 @@
+{% extends 'layouts/default_layout.html' %}
+    
+
+{% block head %}
+    
+    <title>Home</title>
+
+{% endblock %}
+
+
+{% block body %}
+
+
+    <section class="summary-section flex-column-arround">
+
+        <h4 class="title-summary">Résumé de la prédiction</h4>
+
+        <section class="prediction-section flex-row-arround">
+
+            <div class="flex-column-between">
+                <h5 style="margin-bottom: 50px;">Enregistrements</h5>
+    
+                <div>
+                    
+                    {% for key, value in original_list.items() %}
+
+                        <strong>{{ key }} : </strong> <span>{{ value }}</span><br><br>
+
+                    {% endfor %}
+                
+                </div>
+            </div>
+            
+            <div class="flex-column-between">
+                <h5>Prédiction</h5>
+
+                <div>
+                    {% if prediction[0] == 1 %}
+                        <h4 class="cardiaque">Le patient est atteint d'une maladie <strong>CARDIAQUE</strong></h4>
+                    {% endif %}    
+
+                    {% if prediction[0] == 0 %}
+                        <h4 class="nonCardiaque">Le patient n'a aucune maladie <strong>CARDIAQUE</strong></h4>
+                    {% endif %}   
+                    
+                    <div style="width: 100%; margin-top: 100px; height:100px;" class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>L'insertion en base de donnée</strong> est un succès.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </section>
+    
+
+{% endblock %}

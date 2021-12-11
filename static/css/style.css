@@ -1,0 +1,489 @@
+body
+{
+    background-color: #001a2e;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+/* FLEXBOX */
+
+    .flex-column-arround
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 100px;
+    }    
+
+    .flex-column-between
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+    
+    .flex-column-center
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+
+    .flex-row-arround
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .flex-row-between
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .flex-row-center
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* #FLEXBOX */
+
+
+
+/* HEADER CODE */
+
+    header{
+        margin-top: 20px;
+        width: 100%;
+        height: 130px;
+    }
+
+    header nav a
+    {
+        display: block;
+        color:  silver;
+        font-weight: 100;
+        text-decoration: none !important;    
+        transition-property: color;
+        margin-left: 2%;
+    }
+
+    header nav
+    {
+        width: 100%;
+        padding-right: 2%;
+    }
+
+    .section-site
+    {
+        height: auto;
+        width: 100%;
+    }
+
+    .postlink
+    {
+        color: white;
+        text-decoration: none;
+    }
+
+    .postlink:hover, .link:hover
+    {
+        color: tomato;
+    }
+
+    .error404
+    {
+        font-size: 6em;
+        color: tomato;
+        margin-bottom: 50px;
+    }
+
+    .link
+    {
+        color: #0084ff;
+    }
+
+    .active
+    {
+        color: tomato;
+    }
+
+    .headerHome
+    {
+        margin-top: 10%;
+    }
+
+
+/* #HEADER CODE */
+
+
+
+
+
+/* FOOTER CODE */
+
+    footer
+    {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        background-color: tomato;
+        font-size: 12px;
+        padding-top: 15px;
+    }
+
+/* #FOOTER CODE */
+
+
+
+
+
+/* TABLE CODE */
+
+    table, td, th
+    {
+        border: 0.1px solid silver; 
+        padding: 10px;  
+        text-align: center;
+        color: silver;
+    }
+
+    th
+    {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 14px;
+        background-color: silver;
+        color: #333;
+        border: none;
+    } 
+
+    td
+    {
+        height: 80px;
+    }
+
+    table
+    {
+        border-collapse: collapse;
+        width: 50%;
+        border: none;
+    }
+
+    .btnBack
+    {
+        width: 100px;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 13px;
+        text-align: center;
+        background-color: #0084ff;
+        border: none;
+        color: white;
+        font-weight: 400;
+        transition-property: background;
+        margin-top: 30px;
+    }
+
+/* #TABLE CODE */
+
+
+
+
+
+/* FORM CODE */
+
+    .section-index
+    {
+        width: 100%;
+    }
+
+    .section-index form
+    {
+        width: 40%;
+        height: auto;
+        justify-content: space-around;
+    }
+
+    input[type="number"], input[type="text"]
+    {
+        width: 100%;
+        height: 45px;
+        color:silver;
+        padding-left: 3%;
+        padding-right: 1%;
+        margin-bottom: 20px;
+        border: none;
+        background-color: #022b4b;
+    }
+
+    form button
+    {
+        width: 100%;
+        height: 45px;
+        background-color: #0084ff;
+        border: none;
+        color: white;
+        font-weight: bold;
+        font-size: 13px;
+        transition-property: background;
+    }
+
+    select
+    {
+        width: 100%;
+        border-radius: 0%;
+        height: 45px;
+        margin-bottom: 20px;
+        padding-left: 3%;
+        border: none;
+        background-color: #022b4b;
+        color: silver;
+    }
+
+    form input[name="age"]
+    {
+        margin-top: 50px;
+    }
+
+    form button[name="Enregistrer"]
+    {
+        margin-top: 50px;
+    }
+
+/* #FORM CODE */
+
+
+
+/* PREDICTION CODE */
+
+    .summary-section, .prediction-section
+    {
+        width: 100%;
+        height: auto;
+    }
+
+    .summary-section .title-summary
+    {
+        padding-bottom: 50px;
+        border-bottom: 0.5px solid #022b4b;
+        text-transform: uppercase;
+    }
+    
+    .prediction-section
+    {
+        margin-top: 50px;
+    }
+    
+    .prediction-section div
+    {
+        width: 50%;
+        height: 550px; 
+    }
+   
+    .prediction-section div:first-child
+    {
+        border-right: 0.5px solid #022b4b;
+    }
+
+    .cardiaque
+    {
+        color: rgb(255, 83, 83);
+        margin-top: 30%;
+        text-align: center;
+    }
+    
+    .nonCardiaque
+    {
+        color: rgb(99, 214, 143);
+        margin-top: 30%;
+        text-align: center;
+    }
+
+/* #PREDICTION CODE */
+
+
+
+
+
+
+/* HOVERS */
+
+    header nav a:hover
+    {
+        color: tomato;
+        transition-duration: 300ms;
+    }
+    
+    form button:hover, .btnBack:hover
+    {
+        transition-duration: 500ms;
+        background-color: tomato;
+        cursor: pointer;
+    }
+    
+    input[type="number"]:hover, input[type="text"]:hover, select:hover
+    {
+        transition-duration: 500ms;
+        border: none;
+        background-color: tomato;
+        color: white;
+    }
+
+    option
+    {
+        border: none;
+    }
+
+    .btn-delete:hover
+    {
+        background-color:rgb(131, 8, 8);
+        cursor: pointer;
+    }
+    
+    .btn-update:hover
+    {
+        background-color:rgb(190, 102, 0);
+        cursor: pointer;
+    }
+
+    
+    
+/* #HOVERS */
+
+
+
+
+/* BTN CODE */
+
+    .mybtn
+    {
+        width: 35px;
+        height: 35px;
+    }
+
+    .btn-delete
+    {
+        background-color:rgb(184, 17, 17);
+    }
+    
+    .btn-update
+    {
+        background-color:rgb(255, 136, 0);
+    }
+
+    .mybtn img
+    {
+        width: 50%;
+    }
+    
+    .btn
+    {
+        border-radius: 0%;
+        font-size: 13px;
+    }
+
+/* #BTN CODE */
+
+
+
+
+/* #MODAL CODE */
+   
+    .modal-content
+    {
+        background-color: #001a2e;
+    }
+
+    .modal-content span[aria-hidden="true"]
+    {
+        color: silver;
+    }
+
+    .modal-content .modal-header
+    {
+        border-bottom: none;
+    }
+
+    .modal-content .modal-footer
+    {
+        border-top: 2px solid rgb(5, 33, 59);
+    }
+
+    .modal-body
+    {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .alert
+    {
+        margin-top: -50px;
+        margin-bottom: 50px;
+    }
+/* #MODAL CODE */
+
+
+
+
+/* MEDIA QUERY */
+
+    @media screen and (max-width: 1400px)
+    {
+        input[type="text"] { width: 100% !important; }
+        
+        header nav
+        {
+            flex-direction: column;
+            height: 50px;
+        } 
+
+        
+    }
+
+    @media screen and (max-width: 1400px)
+    {
+        input[type="text"] { width: 50%; }
+        form button { width: 100%; }
+        table { width: 80%; }
+    }
+
+    @media screen and (max-width: 850px)
+    {
+        table { width: 90%; }
+        input[type="text"] { width: 80%; }
+        form button { width: 100%; }
+        input[type="text"] { width: 100% !important; }
+        .section-index form { width: 60%; }
+        .section-index form:last-child { margin: 0; }
+
+        .section-index
+        {
+            flex-direction: column;
+            margin-top: 80px;
+        }
+    
+    }
+
+    @media screen and (max-width: 550px)
+    {
+        .section-index form{ width: 85%; }
+    }
+
+/* #MEDIA QUERY */
